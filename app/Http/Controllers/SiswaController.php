@@ -15,9 +15,9 @@ class SiswaController extends Controller
         foreach($datas as $data)
         {
             $ndata = Siswa::create([
-                'name' => $data['name'],
+                'name' => strtoupper($data['name']),
                 'age' => $data['age'],
-                'city' => $data['city']
+                'city' => strtoupper($data['city'])
             ]);
 
             array_push($container,$ndata);
