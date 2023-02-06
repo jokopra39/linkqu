@@ -9,20 +9,22 @@ class SiswaController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'age' => 'required',
-            'city' => 'required',
-        ]);
+        $datas = $request->data;
+        // $obj = json_decode($datas, true);
+        $container = array();
+        foreach($datas as $data)
+        {
+            $ndata = Siswa::create([
+                'name' => $data['name'],
+                'age' => $data['age'],
+                'city' => $data['city']
+            ]);
 
-        $siswa = Siswa::create([
-            'name' => strtoupper($request->name),
-            'age' => $request->age,
-            'city' => strtoupper($request->city),
-        ]);
+            array_push($container,$ndata);
+        }
         return [
             "status" => 1,
-            "data" => $siswa
+            "data" => count($container),
         ];
     }
     
