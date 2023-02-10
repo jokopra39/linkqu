@@ -16,7 +16,7 @@
         <input type="text" id="get-input"
             class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             placeholder="" />
-            <div class="req text-red-300">Required field.</div>
+            <div class="req text-sm text-red-300">Required field.</div>
     </label>
     <div>
         <button class="save rounded-lg bg-emerald-600 ml-5 px-3 py-2 text-stone-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200">Save Changes</button>
