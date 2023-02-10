@@ -18,7 +18,7 @@
             placeholder="" />
     </label>
     <div>
-        <button class="save rounded-lg bg-emerald-600 ml-5 px-3 py-2 text-stone-200">Save Changes</button>
+        <button class="save rounded-lg bg-emerald-600 ml-5 px-3 py-2 text-stone-200 disabled:bg-slate-50 disabled:text-slate-500 disabled:border-slate-200">Save Changes</button>
     </div>
     <div class="p-2 ml-3 mt-5">Result :</div>
     <div class="ml-5 mt-5 animload">
@@ -37,8 +37,10 @@
     <script>
     $(document).ready(function() {
         $(".animload").hide();
+        $('.save').prop('disabled', false);
         $(".save").click(function() {
             $("#weather-temp").hide();
+            $('.save').prop('disabled', true);
             $(".animload").show();
             preSubmit();
             $.ajax({
@@ -51,6 +53,7 @@
                         "</strong>");
                         $(".animload").hide();
                         $("#weather-temp").show();
+                        $('.save').prop('disabled', false);
                 }
             });
         });
