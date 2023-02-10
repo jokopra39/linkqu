@@ -42,11 +42,7 @@
         $('.save').prop('disabled', false);
         $('#get-input').keyup(function() {
             var getInp = $("#get-input").val();
-            if(getInp === ""){
-                $(".req").show();
-            }else{
-                $(".req").hide();
-            }
+            getInp === ""? $(".req").show():$(".req").hide()
         });
         $(".save").click(function() {
             var getInp = $("#get-input").val();
